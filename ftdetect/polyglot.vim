@@ -414,6 +414,13 @@ autocmd BufNewFile,BufRead *.hx setf haxe
   augroup end
 endif
 
+if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'hive') == -1
+  augroup filetypedetect
+  " hive, from hive.vim in autowitch/hive.vim
+au BufNewFile,BufRead *.hql set filetype=hive expandtab
+  augroup end
+endif
+
 if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'i3') == -1
   augroup filetypedetect
   " i3, from i3.vim in PotatoesMaster/i3-vim-syntax
@@ -706,6 +713,13 @@ if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'pgsql') == -1
   " pgsql, from pgsql.vim in exu/pgsql.vim
 " postgreSQL
 au BufNewFile,BufRead *.pgsql           setf pgsql
+  augroup end
+endif
+
+if !exists('g:polyglot_disabled') || index(g:polyglot_disabled, 'pig') == -1
+  augroup filetypedetect
+  " pig, from pig.vim in motus/pig.vim
+au BufRead,BufNewFile *.pig        set filetype=pig syntax=pig
   augroup end
 endif
 
